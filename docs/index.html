@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SWE Motors</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <audio id="homesound" src="dragon-studio-car-engine-roaring-376881.mp3"></audio>
+	<audio id="modelssound" src="hov.mp3"></audio>
+    <audio id="aboutsound" src="hov.mp3"></audio>
+    <audio id="helpsound" src="hov.mp3"></audio>
+    <audio id="careersound" src="hov.mp3"></audio>
+    <audio id="loginsound" src="hov.mp3"></audio>
+    <audio id="videosound" src="hov.mp3"></audio>
+
+	<nav class="links">
+
+            <a href="#" data-sound = "homesound">Home </a>
+            <a href="models.html" data-sound = "modelssound"> Models </a>
+            <a href="aboutus.html"   data-sound = "aboutsound"> About Us </a>
+            <a href="Help.html"   data-sound = "helpsound" > Help </a>
+            <a href="careers.html"  data-sound = "careersound"> Career </a>
+            <a href="login.html"  data-sound = "loginsound" > Login</a>
+            <a href="video.html"   data-sound = "videosound"> Video</a>
+			<span></span>
+
+
+	</nav>
+	<div class="text">
+	  <h1 class="neon">SWE MOTORS<h1>
+	  <h3 class="neon">Your Road To Lead The Way</h3>
+
+	</div>
+
+	<script>
+const nav = document.querySelector('nav');
+const links = nav.querySelectorAll('a');
+const indicator = nav.querySelector('span');
+
+function moveIndicator(element) {
+  indicator.style.left = element.offsetLeft + 'px';
+  indicator.style.width = element.offsetWidth + 'px';
+}
+
+moveIndicator(links[0]);
+
+links.forEach(link => {
+  link.addEventListener('mouseenter', (e) => {
+    moveIndicator(e.target);
+
+    // 1. hat el ID bta3 el soot mn data-sound
+    const soundId = e.target.dataset.sound;
+    const sound = document.getElementById(soundId);
+
+    if (sound) {
+      // 2. wa2af ay soot tany shaghal 3shan my7salsh laghbata
+      document.querySelectorAll('audio').forEach(a => {
+        a.pause();
+        a.currentTime = 0;
+      });
+
+      // 3. sha8al el soot da
+      sound.volume = 0.25;
+      sound.currentTime = 0;
+      sound.play().catch(err => {});
+    }
+  });
+});
+
+nav.addEventListener('mouseleave', () => moveIndicator(links[0]));
+</script>
+</body>
+</html>
+

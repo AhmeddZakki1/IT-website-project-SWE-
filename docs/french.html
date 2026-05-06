@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>French Cars | SWE Motors</title>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #001219; }
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+	  h1 {font-size: 30px ; text-align: left; padding-left : 10px ; padding-right : 80px ;  padding-top : 30px ; padding-bottom : 30px ; 
+	color : #000000 ; background-color : #0055A4; font-weight : bold ;}
+	.select-page {text-align : right ; font-size : 30px ; padding-right : 20px ; padding-top : 30px ;
+	background : #FFFFFF; padding-bottom : 30px ;  font-family: 'Segoe UI', Arial, sans-serif; body } 
+	.select-page a {text-decoration : none ; color : #001219; font-weight : bold ;}
+	.french-cars {text-align : left ; background : #EF4135 ; font-size: 30px ; text-align: left; font-weight : bold ; 
+	padding-left : 10px ; padding-right : 80px ;  padding-top : 30px ; padding-bottom : 30px ; color : #001219 ;
+	font-family: 'Segoe UI', Arial, sans-serif;}
+	
+	.cars-grid {
+      max-width: 1600px;
+      margin: 50px auto;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .car {
+      background: linear-gradient(#0055A4,#FFFFFF,#EF4135);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+	  display : flex ;
+	  flex-direction : column ;
+    }
+    .car img { width: 100%; height: 200px; object-fit: cover; flex-shrink : 0 ; }
+	.car-info { padding: 20px; display : flex ; flex : 1 ; flex-direction : column ; }
+    .car-info h3 { font-size: 22px; margin-bottom: 8px; min-height : 50px ;  }
+    .specs { color: #000000; font-size: 14px; margin-bottom: 14px; flex : 1 ; }
+    .price { color: #000000; font-size: 24px; font-weight: bold; margin-bottom: 14px; }
+    .btn {
+      background: #0f172a;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 15px;
+	  margin-top : auto ;
+	  transition: all 0.3s ease;
+    }
+	.btn:hover {background : linear-gradient(#0055A4,#FFFFFF,#EF4135); color : #000000 ;}
+	</style>
+	
+	
+	</head>
+	
+<body>
+<h1>
+SWE Motors
+<br>
+</h1>
+<div class = "select-page">
+<a href = "models.html"  >Get back to country selection</a>
+</div>
+<div class = "french-cars">
+<p>French Cars</p>
+</div>
+
+<main class = "cars-grid">
+<div class = "car" >
+<img src = "https://brothersegy.com/wp-content/uploads/2025/06/Gemini_Generated_Image_dz872zdz872zdz87.png">
+<div class="car-info">
+        <h3>2025 Renault Logan </h3>
+        <p class="specs">Acceleration (0-100 km/h): 11.5-13 seconds |
+		Engine: 1.6-litre, 4-cylinder petrol engine | Power: 110 horsepower</p>
+        <div class="price"> EGP 500,000</div>
+        <button class="btn" onclick = "tobuy('2025 Renault Logan' , 500000,
+		'https://brothersegy.com/wp-content/uploads/2025/06/Gemini_Generated_Image_dz872zdz872zdz87.png')"
+		>Purchase</button>
+      </div>
+    </div>
+<div class = "car">
+<img src = "https://ymimg1.b8cdn.com/uploads/car_model/12723/logo/2018_Renault_Megane.JPG">
+<div class="car-info">
+        <h3>2025 Renault Megane</h3>
+        <p class="specs">Acceleration (0–100 km/h): 9.5 seconds  |
+		Engine: 1.3L Turbo Dynamic | Power: 150 horsepower</p>
+        <div class="price"> EGP 1,500,000</div>
+        <button class="btn" onclick = "tobuy('2025 Renault Megane' , 1500000,
+		'https://ymimg1.b8cdn.com/uploads/car_model/12723/logo/2018_Renault_Megane.JPG')"
+		>Purchase</button>
+      </div>
+    </div>
+<div class = "car">
+<img src = "https://www.topgear.com/sites/default/files/2025/09/NEW_CITROEN_C3_EXT_UK_20253_0.jpg">
+<div class="car-info">
+        <h3>2026 Citroën C3 Aircross (SUV crossover)</h3>
+        <p class="specs">Acceleration (0-100 km/h): 10.6 seconds |
+		Engine:= 1.2-litre 3-cylinder Turbo (Petrol) | Power: 110 horsepower</p>
+        <div class="price"> EGP 1,300,000</div>
+        <button class="btn" onclick = "tobuy('2026 Citroën C3 Aircross (SUV crossover)' , 1300000,
+		'https://www.topgear.com/sites/default/files/2025/09/NEW_CITROEN_C3_EXT_UK_20253_0.jpg')"
+		>Purchase</button>
+      </div>
+    </div>
+
+
+
+</div>
+<div class = "car">
+<img src = "https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/612d256b974b415defc88096_2f005c43-5fef-485d-891f-ae409b22aabc.jpeg">
+<div class="car-info">
+        <h3> 2022 Peugeot 508 GT Line</h3>
+        <p class="specs">Acceleration (0-100 km/h): 8.7-9.2 seconds |
+		Engine: 1.6-liter 4-cylinder turbocharged petrol (THP) | Power: 165 horsepower </p>
+        <div class="price"> EGP 1,800,000</div>
+         <button class="btn" onclick = "tobuy('2022 Peugeot 508 GT Line' , 1800000,
+		'https://contactcars.fra1.cdn.digitaloceanspaces.com/contactcars-production/Images/Large/Engines/612d256b974b415defc88096_2f005c43-5fef-485d-891f-ae409b22aabc.jpeg')"
+		>Purchase</button>
+      </div>
+    </div>
+
+</main>
+
+<script>
+  function tobuy(name, price, img) { 
+    const carname = encodeURIComponent(name);  
+    const carimg = encodeURIComponent(img);    
+    window.location.href = `buy.html?name=${carname}&price=${price}&img=${carimg}`; 
+     }  
+</script>
+
+</body>
+
+	
+</html>

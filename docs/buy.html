@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purchase Car | SWE Motors</title>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #495057; }
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+     h1 {font-size: 40px ; text-align: center; padding-left : 80px ; padding-right : 80px ;  padding-top : 30px ;
+	padding-bottom : 50px ;color : #bfc0c0 ; background-color : #000000 ; position : relative ;}
+    
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+	.backb { 
+      position: absolute;  
+      left: 30px;          
+      top: 35%;            
+      transform: translateY(-50%);  
+      
+      background: #00000; 
+      color: #bfc0c0; 
+      padding: 8px 18px; 
+      border: 2px solid #fff;      
+      border-radius: 20px; 
+      cursor: pointer; 
+      font-size: 16px;
+      text-decoration: none;       
+      transition: 0.3s;
+    }
+    
+    .backb:hover {
+      transform: translateY(-50%) translateY(-3px);  
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      background: linear-gradient(45deg,#2e3192,#1bffff); 
+    }
+	
+	.carddetails { 
+      background: #000000 ; 
+      color: #bfc0c0;
+      border-radius: 10px; 
+      padding: 30px; 
+      display: flex; 
+      gap: 30px; 
+      margin-bottom: 30px;
+    }
+    .carddetails img { 
+      width: 400px; 
+      height: 250px; 
+      object-fit: cover; 
+      border-radius: 10px; 
+    }
+    .carinfo h2 { font-size: 28px; margin-bottom: 15px; }
+    .carinfo .price { 
+      font-size: 30px; 
+      font-weight: bold; 
+      color: #bfc0c0; 
+      margin-bottom: 20px; 
+    }
+    
+    .buyform { 
+      background: #FFFFFF; 
+      color: #000000; 
+      border-radius: 10px; 
+      padding: 30px; 
+    }
+    .buyform h3 { font-size: 24px; margin-bottom: 20px; }
+    .formgroup { margin-bottom: 15px; }
+    .formgroup label { 
+      display: block; 
+      margin-bottom: 5px; 
+      font-weight: bold; 
+    }
+    .formgroup input { 
+      width: 100%; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+      font-size: 16px;
+    }
+    .submitbtn { 
+      background: #0f172a; 
+      color: white; 
+      padding: 12px 30px; 
+      border: none; 
+      border-radius: 20px; 
+      cursor: pointer; 
+      font-size: 18px; 
+      width: 100%; 
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .submitbtn:hover { 
+      background: linear-gradient(45deg,#2e3192,#1bffff);  
+    }
+	
+	
+	
+	
+	</style>
+	
+	</head>
+	
+	
+<body>
+<h1>
+SWE Motors
+<br>
+<a   class = "backb" href="#" onclick="history.back(); return false;">Back</a>
+</h1>
+
+ <div class="container">
+ <div class="carddetails">
+      <img id="carimg" src="" >
+      <div class="carinfo">
+        <h2 id="carname">Loading...</h2>
+        <div class="price" id="carprice">EGP 0</div>
+        <p>Thank you for choosing SWE Motors, fill the form below to complete your purchase request</p>
+      </div>
+    </div>
+	
+	 <div class="buyform">
+      <h3>Your Details</h3>
+      <form onsubmit="submitOrder(); return false;">
+        <div class="formgroup">
+          <label>Full Name</label>
+          <input type="text" placeholder = "xxxx xxxx mohamed"id="customername" required>
+        </div>
+        <div class="formgroup">
+          <label>Phone Number</label>
+          <input type="tel"  placeholder = "01507461250"  id="customerphone" required>
+        </div>
+        <div class="formgroup">
+          <label>Email</label>
+          <input type="email"   placeholder = "youssef@example.com"  id="customeremail" required>
+        </div>
+        <div class="formgroup">
+          <label>Visa Card Number</label>
+          <input type="text" id="customercard" placeholder="1234-5678-9012-3456" maxlength="19" required>
+          </div>
+		<button type="submit" class="submitbtn">Confirm Purchase Request</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+	
+<script>
+    const par = new URLSearchParams(window.location.search);
+    
+    const carname = decodeURIComponent(par.get("name") );
+    const carprice = Number(par.get("price")) ;
+    const carimg = decodeURIComponent(par.get("img") );
+    
+    document.getElementById("carname").textContent = carname;
+    document.getElementById("carprice").textContent = `EGP ${carprice.toLocaleString()}`;
+    document.getElementById("carimg").src = carimg;
+    
+    function submitOrder() {
+      const name = document.getElementById("customername").value;
+      const phone = document.getElementById("customerphone").value;
+      const email = document.getElementById("customeremail").value;
+      const card = document.getElementById("customercard").value;
+     const lastFour = card.slice(-4);
+      
+      alert(`Thank you ${name}! \nWe received your request for ${carname} (${carprice.toLocaleString()} EGP). \nCard ending in ${lastFour} \nWe will contact you at ${phone} or ${email} soon.`); }
+		
+	document.getElementById("customercard").addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, ''); // sheel ay 7aga msh rakam
+  let formattedValue = value.match(/.{1,4}/g)?.join('-') || value;
+  e.target.value = formattedValue; });
+  </script>
+
+</body>
+</html>
