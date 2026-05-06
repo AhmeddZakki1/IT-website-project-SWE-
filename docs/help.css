@@ -1,0 +1,95 @@
+body{
+	background-color:#222;
+}
+
+
+
+h1{
+	background:linear-gradient(45deg,#2e3192,#1bffff);
+	text-align:center ;
+	Color : #fff;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius:18px;
+}
+
+.one {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.one div {
+    background-color:#FFFFFF10;
+    padding: 20px;
+    border-radius:18px;
+    box-shadow:0 10px 25px #00000030;
+    transition: 0.3s;
+}
+
+.one div:hover {
+    transform: translateY(-5px);
+}
+
+.one h2 {
+    color:#1bffff;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.one p {
+    color: #fff;
+    font-size: 15px;
+}
+
+
+
+h3 {
+    color:#fff;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+li {
+    background-color:#FFFFFF10;
+	color:#fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius:18px;
+	box-shadow:0 10px 25px #00000030;
+}
+
+li strong {
+    color:#1bffff;
+}
+li:hover{
+    transform: translateY(-5px);
+}
+
+h4 {
+    color: #003366;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.last p {
+    font-size: 18px;
+	text-align:center;
+	color:#fff;
+}
+h4{
+	text-align:center
+}
+	
+.last{
+	background:linear-gradient(45deg,#2e3192,#1bffff);
+	padding-top:40px;
+	padding-bottom:40px;
+	border-radius:18px;
+}

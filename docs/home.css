@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    background-image:url("blue-car-ixufzarso9rfsgwf.webp");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+}
+
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    z-index:0;
+}
+
+
+.text, nav{
+    position:relative;
+    z-index:2;
+}
+
+
+.text{
+    margin-top:40px;
+    text-align:center;
+}
+
+.neon{
+    font-size:5em;
+    color:#fff;
+    letter-spacing:5px;
+    text-shadow:
+        0 0 10px #1bffff,
+        0 0 25px #2e3192;
+}
+
+
+nav{
+    width: fit-content; 
+    padding: 0 10px;
+    height:60px;
+    background:#222;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding: 0 20px; 
+    line-height:60px;
+    position:relative;
+    z-index:2;
+    font-size: 15px;
+    white-space: nowrap; 
+}
+
+nav span{
+    position:absolute;
+    height: 45px;
+    top: 7.5px;
+    left: 0;
+    background:linear-gradient(45deg,#2e3192,#1bffff);
+    border-radius:50px;
+    transition: all 0.3s ease; 
+    z-index:1;
+}
